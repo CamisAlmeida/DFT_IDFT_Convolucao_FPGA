@@ -5,11 +5,11 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog  -work work +incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT {C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmul_Gauss.v}
+vlog  -work work +incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT {C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW1.v}
 
-vlog  -work work +incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT {C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_cmul_Gauss.v}
+vlog  -work work +incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT {C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_cmulW1.v}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  tb_cmul_Gauss
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  tb_cmulW1
 
 add wave *
 view structure

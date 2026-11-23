@@ -1,0 +1,39 @@
+/**
+Testbench dos multiplicadores com constantes (W1 e W3)
+Compara com o cmulGauss genérico (c e d como entrada)
+**/
+`timescale 1ns/1ps
+
+module tb_cmulConst;
+	reg signed [15:0] a,b;
+	wire signed [16:0] re1,im1;      // cmulW1
+	wire signed [16:0] re3,im3;      // cmulW3
+	wire signed [16:0] reg1,img1;    // referência W1
+	wire signed [16:0] reg3,img3;    // referência W3
+
+	// módulos com constantes
+	cmulW1 u1 (a,b,re1,im1);
+	cmulW3 u3 (a,b,re3,im3);
+
+	// referência: módulo genérico com os mesmos valores de c e d
+	cmulGauss r1 (a,b,16'sd11585,-16'sd11585,reg1,img1);
+	cmulGauss r3 (a,b,-16'sd11585,-16'sd11585,reg3,img3);
+
+	initial begin
+		// (100+50j)
+		a = 100; b = 50;
+		#10 $display("W1: re=%0d im=%0d (esperado 106, -36) | ref %0d, %0d", re1, im1, reg1, img1);
+		    $display("W3: re=%0d im=%0d (esperado -36, -107) | ref %0d, %0d", re3, im3, reg3, img3);
+
+		// (-80+60j)
+		a = -80; b = 60;
+		#10 $display("W1: re=%0d im=%0d (esperado -15, 98) | ref %0d, %0d", re1, im1, reg1, img1);
+		    $display("W3: re=%0d im=%0d (esperado 98, 14) | ref %0d, %0d", re3, im3, reg3, img3);
+
+		// zero
+		a = 0; b = 0;
+		#10 $display("zero W1: re=%0d im=%0d | W3: re=%0d im=%0d (esperado 0, 0)", re1, im1, re3, im3);
+
+		$stop;
+	end
+endmodule

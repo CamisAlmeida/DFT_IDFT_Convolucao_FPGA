@@ -1,16 +1,16 @@
-Analysis & Synthesis Status : Successful - Mon Nov 23 16:26:24 2026
+Analysis & Synthesis Status : Successful - Mon Nov 23 17:44:31 2026
 Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 Revision Name : DFT_IDFT
-Top-level Entity Name : cmul_Gauss
+Top-level Entity Name : cmulW1
 Family : MAX 10
-Total logic elements : 63
-    Total combinational functions : 63
+Total logic elements : 169
+    Total combinational functions : 169
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 68
+Total pins : 66
 Total virtual pins : 0
 Total memory bits : 0
-Embedded Multiplier 9-bit elements : 3
+Embedded Multiplier 9-bit elements : 2
 Total PLLs : 0
 UFM blocks : 0
 ADC blocks : 0
