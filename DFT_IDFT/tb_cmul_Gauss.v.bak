@@ -1,0 +1,30 @@
+//Testbench do multiplicador complexo de Gauss
+
+`timescale 1ns/1ps
+
+module tb_cmul_Gauss;
+	reg signed [7:0] a,b,c,d;
+	wire signed [17:0] re,im;
+
+	// instância do módulo
+	cmulGauss dut (a,b,c,d,re,im);
+
+	initial begin
+		// (3+4j)*(1+2j) = -5 + 10j
+		a = 3; b = 4; c = 1; d = 2;
+		#10 
+		$display("re=%0d im=%0d (esperado -5, 10)", re, im);
+
+		// (-3+5j)*(2-1j) = -1 + 13j
+		a = -3; b = 5; c = 2; d = -1;
+		#10 
+		$display("re=%0d im=%0d (esperado -1, 13)", re, im);
+
+		// zero
+		a = 0; b = 0; c = 5; d = 7;
+		#10 
+		$display("re=%0d im=%0d (esperado 0, 0)", re, im);
+
+		$stop;
+	end
+endmodule

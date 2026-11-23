@@ -1,0 +1,46 @@
+/**
+Multiplicação de números complexos pelo algoritmo de Gauss
+
+(a + jb) * (c + jd) = (ac - bd) + j(ad + bc)
+
+Usando 3 multiplcações:
+
+k1 = c * (a + b)
+k2 = a * (d - c)
+k3 = b * (c + d)
+
+Real = k1 - k3   ->  ac - bd
+Imag = k1 + k2   ->  ad + bc
+
+Como c e d serão constantes (twiddle factors), (d - c) e (c + d)
+podem ser calculados antes, em Python.
+**/
+
+// Declaração do modulo
+module cmul_Gauss(a,b,c,d,re,im); 
+	//Portas
+	input signed [7:0] a,b;      // entrada variável: a + jb
+	input signed [7:0] c,d;      // coeficiente:      c + jd
+	output signed [17:0] re,im;  // resultado: re + j*im
+
+	//Fios intermediarios
+	wire signed [8:0] soma_ab;   // a + b
+	wire signed [8:0] soma_cd;   // c + d
+	wire signed [8:0] sub_dc;    // d - c
+	wire signed [16:0] k1,k2,k3; // as 3 multiplicações
+
+	// primeiras somas
+	assign soma_ab = a + b;
+	assign soma_cd = c + d;
+	assign sub_dc  = d - c;
+
+	// multiplicações
+	assign k1 = soma_ab * c;
+	assign k2 = a * sub_dc;
+	assign k3 = b * soma_cd;
+
+	// somas finais 
+	assign re = k1 - k3; // parte real
+	assign im = k1 + k2; // parte imaginaria 
+
+endmodule

@@ -1,0 +1,79 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/simulation/questa
+T_opt
+!i145 1
+!i144 0
+!s110 1795462032
+V7fCWc6I7FkY4XCEoG][@g1
+04 13 4 work tb_cmul_Gauss fast 0
+=1-6432a8188bca-6b04938f-2f7-2794
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U2 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
+tCvgOpt 0 defaultOptions 1107585188
+n@_opt
+OL;O;2025.2;82
+vcmul_Gauss
+2C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmul_Gauss.v
+!s110 1795462021
+!i10b 1
+!s100 JVA4fKmL?FghEbhC9O9od2
+Id=CRz4C0@dCQgQ=5687gk1
+R1
+w1795461291
+8C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmul_Gauss.v
+FC:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmul_Gauss.v
+!i122 0
+L0 20 27
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 OL;L;2025.2;82
+r1
+!s85 0
+31
+!s108 1795462021.000000
+!s107 C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmul_Gauss.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT|C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmul_Gauss.v|
+!i113 0
+Z4 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z5 !s92 -work work +incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z6 tCvgOpt 0 defaultOptions 1085333592
+ncmul_@gauss
+vtb_cmul_Gauss
+2C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_cmul_Gauss.v
+!s110 1795462022
+!i10b 1
+!s100 _o;O96Zz[XXaGL]cgDf5I3
+IlZ41i9Z`W2k0fjVVcT;2N1
+R1
+w1795461862
+8C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_cmul_Gauss.v
+FC:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_cmul_Gauss.v
+!i122 1
+L0 5 26
+R2
+R3
+r1
+!s85 0
+31
+!s108 1795462022.000000
+!s107 C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_cmul_Gauss.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT|C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_cmul_Gauss.v|
+!i113 0
+R4
+R5
+R6
+ntb_cmul_@gauss
