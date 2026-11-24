@@ -1,2 +1,3 @@
-1 11 butterflyW2 4 fast 69 C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/simulation/questa/rtl_work 0 0 0 0 32 0
-1 14 tb_butterflyW2 4 fast 69 C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/simulation/questa/rtl_work 0 0 180224 0 201 0
+1 6 cmulW1 4 fast 69 C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/simulation/questa/rtl_work 0 0 0 0 55 0
+1 11 butterflyW1 4 fast 69 C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/simulation/questa/rtl_work 0 0 0 0 39 0
+1 14 tb_butterflyW1 4 fast 69 C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/simulation/questa/rtl_work 0 0 180224 0 404 0

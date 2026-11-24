@@ -28,40 +28,52 @@
 # Copying c:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog  -work work +incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT {C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW2.v}
+# vlog  -work work +incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT {C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW1.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 18:30:04 on Nov 23,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT" C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW2.v 
+# Start time: 13:59:12 on Nov 24,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT" C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW1.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module butterflyW2
+# -- Compiling module cmulW1
 # 
 # Top level modules:
-# 	butterflyW2
-# End time: 18:30:04 on Nov 23,2026, Elapsed time: 0:00:00
+# 	cmulW1
+# End time: 13:59:12 on Nov 24,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# 
-# vlog  -work work +incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT {C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW2.v}
+# vlog  -work work +incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT {C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW1.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 18:30:04 on Nov 23,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT" C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW2.v 
+# Start time: 13:59:13 on Nov 24,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT" C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW1.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module tb_butterflyW2
+# -- Compiling module butterflyW1
 # 
 # Top level modules:
-# 	tb_butterflyW2
-# End time: 18:30:04 on Nov 23,2026, Elapsed time: 0:00:00
+# 	butterflyW1
+# End time: 13:59:13 on Nov 24,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  tb_butterflyW2
+# vlog  -work work +incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT {C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW1.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 13:59:13 on Nov 24,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT" C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW1.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module tb_butterflyW1
+# 
+# Top level modules:
+# 	tb_butterflyW1
+# End time: 13:59:13 on Nov 24,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  tb_butterflyW1
 # ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" tb_butterflyW2 
-# Start time: 18:30:05 on Nov 23,2026
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" tb_butterflyW1 
+# Start time: 13:59:13 on Nov 24,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
 # ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.tb_butterflyW2(fast)
-# Loading work.butterflyW2(fast)
+# Loading work.tb_butterflyW1(fast)
+# Loading work.butterflyW1(fast)
+# Loading work.cmulW1(fast)
 # 
 # add wave *
 # view structure
@@ -69,14 +81,14 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# OK:   X=15+j17 Y=5+j23
-# OK:   X=-18+j-2 Y=-2+j10
-# OK:   X=0+j0 Y=0+j0
-# OK:   X=0+j-1 Y=0+j1
-# OK:   X=1+j0 Y=-1+j0
-# BUTTERFLY W2 PASSOU
-# ** Note: $stop    : C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW2.v(43)
-#    Time: 50 ns  Iteration: 0  Instance: /tb_butterflyW2
-# Break in Module tb_butterflyW2 at C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW2.v line 43
-# End time: 18:33:40 on Nov 23,2026, Elapsed time: 0:03:35
+# ERRO: A=(16384,16384) B=(16384,16384) | X=(39554,16384) esp=(39554,16384) | Y=(-6786,16384) esp=(-6786,16384)
+# ERRO: A=(16384,-16384) B=(-16384,16384) | X=(16384,6786) esp=(16384,6786) | Y=(16384,-39554) esp=(16384,-39554)
+# tb_butterflyW1: 1018 casos, 2 erros
+# erro maximo do T em relacao a W1*B exato: 46340.474967 LSB
+# FALHOU
+# ** Note: $finish    : C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW1.v(115)
+#    Time: 1018 ns  Iteration: 0  Instance: /tb_butterflyW1
+# 1
+# Break in Module tb_butterflyW1 at C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW1.v line 115
+# End time: 13:59:40 on Nov 24,2026, Elapsed time: 0:00:27
 # Errors: 0, Warnings: 1

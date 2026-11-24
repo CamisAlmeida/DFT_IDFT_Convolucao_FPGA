@@ -1,0 +1,116 @@
+`timescale 1ns/1ps
+
+module tb_butterflyW3;
+
+	reg signed [15:0] ar, ai, br, bi;
+	wire signed [16:0] xr, xi, yr, yi;
+
+	// modelo inteiro (idêntico ao hardware)
+	integer tr_exp, ti_exp;
+	integer exp_xr, exp_xi, exp_yr, exp_yi;
+
+	// modelo em ponto flutuante (matemática exata)
+	real r_tr, r_ti, err_r, err_i;
+
+	integer erros;
+	integer total;
+	integer i;
+	real    err_max;
+
+	// instância do módulo sob teste
+	butterflyW3 dut(.ar(ar), .ai(ai), .br(br), .bi(bi),
+	                .xr(xr), .xi(xi), .yr(yr), .yi(yi));
+
+	// aplica uma entrada, espera e compara com o esperado
+	task testa;
+		input signed [15:0] t_ar, t_ai, t_br, t_bi;
+		begin
+			ar = t_ar;  ai = t_ai;
+			br = t_br;  bi = t_bi;
+			#1;
+
+			// T = W3*B em inteiro:  Re = 11585*(bi-br)>>>14
+			//                       Im = -11585*(br+bi)>>>14
+			tr_exp = (11585 * (bi - br)) >>> 14;
+			ti_exp = (-11585 * (br + bi)) >>> 14;
+
+			exp_xr = ar + tr_exp;
+			exp_xi = ai + ti_exp;
+			exp_yr = ar - tr_exp;
+			exp_yi = ai - ti_exp;
+
+			// T exato em ponto flutuante: (-0.7071-0.7071j)*(br+j*bi)
+			r_tr = 0.70710678 * (bi - br);
+			r_ti = -0.70710678 * (br + bi);
+
+			// T efetivo do hardware = X - A
+			err_r = (xr - ar) - r_tr;
+			err_i = (xi - ai) - r_ti;
+			if (err_r < 0) err_r = -err_r;
+			if (err_i < 0) err_i = -err_i;
+			if (err_r > err_max) err_max = err_r;
+			if (err_i > err_max) err_max = err_i;
+
+			total = total + 1;
+			if (xr !== exp_xr || xi !== exp_xi ||
+			    yr !== exp_yr || yi !== exp_yi ||
+			    err_r > 2.0 || err_i > 2.0) begin
+				erros = erros + 1;
+				$display("ERRO: A=(%0d,%0d) B=(%0d,%0d) | X=(%0d,%0d) esp=(%0d,%0d) | Y=(%0d,%0d) esp=(%0d,%0d)",
+				         ar, ai, br, bi, xr, xi, exp_xr, exp_xi, yr, yi, exp_yr, exp_yi);
+			end
+		end
+	endtask
+
+	initial begin
+		erros = 0;
+		total = 0;
+		err_max = 0.0;
+
+		// zeros
+		testa(0, 0, 0, 0);
+
+		// só A (B = 0): X = Y = A
+		testa(100, 0, 0, 0);
+
+		// só B real e só B imaginário (confere o sinal de W3)
+		testa(0, 0, 100, 0);
+		testa(0, 0, 0, 100);
+
+		// positivos e negativos
+		testa(10, 20, 30, 40);
+		testa(-10, -20, -30, -40);
+		testa(50, -50, -30, 30);
+		testa(-100, 100, 100, -100);
+
+		// extremos da faixa de 8 bits (amostras x[n])
+		testa(127, 127, 127, 127);
+		testa(-128, -128, -128, -128);
+		testa(127, -128, -128, 127);
+		testa(-128, 127, 127, -128);
+
+		// faixa típica da FFT de 8 pontos (até ~1024)
+		testa(1024, -1024, 1024, 1024);
+		testa(-1024, 1024, -1024, -1024);
+
+		// extremos da faixa de validade (+-16384)
+		testa(16384, 16384, 16384, 16384);
+		testa(-16384, -16384, -16384, -16384);
+		testa(16384, -16384, -16384, 16384);
+		testa(-16384, 16384, 16384, -16384);
+
+		// aleatórios dentro de +-16384
+		for (i = 0; i < 1000; i = i + 1) begin
+			testa($random % 16385, $random % 16385,
+			      $random % 16385, $random % 16385);
+		end
+
+		$display("tb_butterflyW3: %0d casos, %0d erros", total, erros);
+		$display("erro maximo do T em relacao a W3*B exato: %f LSB", err_max);
+		if (erros == 0) $display("PASSOU");
+		else            $display("FALHOU");
+
+		$finish;
+	end
+
+endmodule

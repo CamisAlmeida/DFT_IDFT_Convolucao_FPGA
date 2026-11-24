@@ -9,6 +9,12 @@ R0
 R1
 R0
 R1
+R0
+R1
+R0
+R1
+R0
+R1
 !s12c _opt
 R1
 !s11f vlog 2025.2 2025.05, May 31 2025
@@ -24,81 +30,106 @@ T_opt
 !i144 0
 !s110 1795468356
 V:olgnQn0=Hnoa?BM]mFKg1
-Z3 04 14 4 work tb_butterflyW2 fast 0
+04 14 4 work tb_butterflyW2 fast 0
 =1-6432a8188bca-6b04ac41-2ea-3090
 R1
-Z4 !s12f OEM100
-Z5 !s12b OEM100
-Z6 !s124 OEM10U2 
-Z7 !s135 nogc
-Z8 o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
-Z9 tCvgOpt 0 defaultOptions 1107585188
+Z3 !s12f OEM100
+Z4 !s12b OEM100
+!s124 OEM10U2 
+Z5 !s135 nogc
+Z6 o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
+Z7 tCvgOpt 0 defaultOptions 1107585188
 n@_opt
-Z10 OL;O;2025.2;82
+Z8 OL;O;2025.2;82
 R2
 T_opt1
 !i145 1
 !i144 0
-!s110 1795469406
-VoSniIKDHlcSOEPnjIdJAW3
-R3
-=1-6432a8188bca-6b04b05d-3bd-3184
+!s110 1795539555
+V[;`36>j4_UbM3EEN7dOjf1
+04 14 4 work tb_butterflyW1 fast 0
+=1-6432a8188bca-6b05c262-da-318c
 R1
+R3
 R4
+!s124 OEM10U3 
 R5
 R6
 R7
-R8
-R9
 n@_opt1
-R10
-vbutterflyW2
-2C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW2.v
-Z11 !s110 1795469404
+R8
+vbutterflyW1
+2C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW1.v
+Z9 !s110 1795539553
 !i10b 1
-!s100 PfkHRD`<_;<01`hM`k11J2
-I]Q9HOZQmV_l?j4ANkNj_E1
+!s100 kP]M2lVBC0E_[PJlBDb:30
+IWDK1<3oO7[ld^_<Z8l?BA3
 R2
-w1795467904
-8C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW2.v
-FC:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW2.v
-!i122 0
-L0 18 14
-Z12 VDg1SIo80bB@j0V0VzS_@n1
-Z13 OL;L;2025.2;82
-r1
-!s85 0
-31
-Z14 !s108 1795469404.000000
-!s107 C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW2.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT|C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW2.v|
-!i113 0
-Z15 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z16 !s92 -work work +incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z17 tCvgOpt 0 defaultOptions 1085333592
-nbutterfly@w2
-vtb_butterflyW2
-2C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW2.v
-R11
-!i10b 1
-!s100 0zkkk]j2VBmnmUYNf5dUM3
-IoKi[b?2PJTlTW:T91MCYz1
-R2
-w1795468740
-8C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW2.v
-FC:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW2.v
+w1795538922
+8C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW1.v
+FC:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW1.v
 !i122 1
-L0 6 40
-R12
-R13
+L0 24 20
+Z10 VDg1SIo80bB@j0V0VzS_@n1
+Z11 OL;L;2025.2;82
 r1
 !s85 0
 31
-R14
-!s107 C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW2.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT|C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW2.v|
+Z12 !s108 1795539553.000000
+!s107 C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW1.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT|C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW1.v|
 !i113 0
+Z13 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z14 !s92 -work work +incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z15 tCvgOpt 0 defaultOptions 1085333592
+nbutterfly@w1
+vcmulW1
+2C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW1.v
+!s110 1795539552
+!i10b 1
+!s100 nHI?@aeacD3M1cOa<WCFf1
+I6UeY]S1?@Gh5cidWKPW1i2
+R2
+w1795464697
+8C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW1.v
+FC:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW1.v
+!i122 0
+L0 25 37
+R10
+R11
+r1
+!s85 0
+31
+!s108 1795539552.000000
+!s107 C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW1.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT|C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW1.v|
+!i113 0
+R13
+R14
 R15
-R16
-R17
-ntb_butterfly@w2
+ncmul@w1
+vtb_butterflyW1
+2C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW1.v
+R9
+!i10b 1
+!s100 Z5@?:Q]_D]z^R?S92W4T23
+IPFZ^aV4dE:Pb8lLCR9Koi3
+R2
+w1795538950
+8C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW1.v
+FC:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW1.v
+!i122 2
+L0 3 116
+R10
+R11
+r1
+!s85 0
+31
+R12
+!s107 C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW1.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT|C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW1.v|
+!i113 0
+R13
+R14
+R15
+ntb_butterfly@w1

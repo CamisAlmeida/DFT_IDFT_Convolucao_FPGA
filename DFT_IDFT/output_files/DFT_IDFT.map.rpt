@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DFT_IDFT
-Mon Nov 23 18:28:36 2026
+Tue Nov 24 14:10:00 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -13,10 +13,28 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. General Register Statistics
+ 10. Parameter Settings for Inferred Entity Instance: butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult0
+ 11. Parameter Settings for Inferred Entity Instance: butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult0
+ 12. Parameter Settings for Inferred Entity Instance: butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1
+ 13. Parameter Settings for Inferred Entity Instance: butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult2
+ 14. lpm_mult Parameter Settings by Entity Instance
+ 15. Port Connectivity Checks: "butterflyW3:s3d"
+ 16. Port Connectivity Checks: "butterflyW2:s3c"
+ 17. Port Connectivity Checks: "butterflyW1:s3b"
+ 18. Port Connectivity Checks: "butterflyW0:s3a"
+ 19. Port Connectivity Checks: "butterflyW2:s2d"
+ 20. Port Connectivity Checks: "butterflyW0:s2c"
+ 21. Port Connectivity Checks: "butterflyW2:s2b"
+ 22. Port Connectivity Checks: "butterflyW0:s2a"
+ 23. Port Connectivity Checks: "butterflyW0:s1d"
+ 24. Port Connectivity Checks: "butterflyW0:s1c"
+ 25. Port Connectivity Checks: "butterflyW0:s1b"
+ 26. Port Connectivity Checks: "butterflyW0:s1a"
+ 27. Post-Synthesis Netlist Statistics for Top Partition
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
 
 
 
@@ -43,19 +61,19 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Nov 23 18:28:35 2026           ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 24 14:10:00 2026           ;
 ; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                      ; DFT_IDFT                                        ;
-; Top-level Entity Name              ; butterflyW2                                     ;
+; Top-level Entity Name              ; fft8                                            ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 68                                              ;
-;     Total combinational functions  ; 68                                              ;
+; Total logic elements               ; 732                                             ;
+;     Total combinational functions  ; 732                                             ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 132                                             ;
+; Total pins                         ; 384                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 4                                               ;
 ; Total PLLs                         ; 0                                               ;
 ; UFM blocks                         ; 0                                               ;
 ; ADC blocks                         ; 0                                               ;
@@ -68,7 +86,7 @@ on the Quartus Prime software download page.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; 10M50DAF484C7G     ;                    ;
-; Top-level entity name                                            ; butterflyW2        ; DFT_IDFT           ;
+; Top-level entity name                                            ; fft8               ; DFT_IDFT           ;
 ; Family name                                                      ; MAX 10             ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -164,55 +182,142 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                           ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                             ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
-; butterflyW2.v                    ; yes             ; User Verilog HDL File  ; C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW2.v ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                   ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
+; cmulW1.v                         ; yes             ; User Verilog HDL File        ; C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW1.v                            ;         ;
+; cmulW3.v                         ; yes             ; User Verilog HDL File        ; C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW3.v                            ;         ;
+; butterflyW2.v                    ; yes             ; User Verilog HDL File        ; C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW2.v                       ;         ;
+; butterflyW0.v                    ; yes             ; User Verilog HDL File        ; C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW0.v                       ;         ;
+; butterflyW3.v                    ; yes             ; User Verilog HDL File        ; C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW3.v                       ;         ;
+; butterflyW1.v                    ; yes             ; User Verilog HDL File        ; C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW1.v                       ;         ;
+; fft8.v                           ; yes             ; User Verilog HDL File        ; C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v                              ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
+; aglobal251.inc                   ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/aglobal251.inc          ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; db/mult_dks.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/db/mult_dks.tdf                     ;         ;
+; multcore.tdf                     ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/multcore.tdf            ;         ;
+; csa_add.inc                      ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/csa_add.inc             ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
+; muleabz.inc                      ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/muleabz.inc             ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; db/add_sub_1vg.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/db/add_sub_1vg.tdf                  ;         ;
+; db/add_sub_7kg.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/db/add_sub_7kg.tdf                  ;         ;
+; db/add_sub_5vg.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/db/add_sub_5vg.tdf                  ;         ;
+; altshift.tdf                     ; yes             ; Megafunction                 ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altshift.tdf            ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 68           ;
-;                                             ;              ;
-; Total combinational functions               ; 68           ;
-; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 0            ;
-;     -- 3 input functions                    ; 64           ;
-;     -- <=2 input functions                  ; 4            ;
-;                                             ;              ;
-; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 4            ;
-;     -- arithmetic mode                      ; 64           ;
-;                                             ;              ;
-; Total registers                             ; 0            ;
-;     -- Dedicated logic registers            ; 0            ;
-;     -- I/O registers                        ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 132          ;
-;                                             ;              ;
-; Embedded Multiplier 9-bit elements          ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; bi[15]~input ;
-; Maximum fan-out                             ; 4            ;
-; Total fan-out                               ; 400          ;
-; Average fan-out                             ; 1.20         ;
-+---------------------------------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                              ;
++---------------------------------------------+----------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                      ;
++---------------------------------------------+----------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 732                                                                        ;
+;                                             ;                                                                            ;
+; Total combinational functions               ; 732                                                                        ;
+; Logic element usage by number of LUT inputs ;                                                                            ;
+;     -- 4 input functions                    ; 110                                                                        ;
+;     -- 3 input functions                    ; 534                                                                        ;
+;     -- <=2 input functions                  ; 88                                                                         ;
+;                                             ;                                                                            ;
+; Logic elements by mode                      ;                                                                            ;
+;     -- normal mode                          ; 161                                                                        ;
+;     -- arithmetic mode                      ; 571                                                                        ;
+;                                             ;                                                                            ;
+; Total registers                             ; 0                                                                          ;
+;     -- Dedicated logic registers            ; 0                                                                          ;
+;     -- I/O registers                        ; 0                                                                          ;
+;                                             ;                                                                            ;
+; I/O pins                                    ; 384                                                                        ;
+;                                             ;                                                                            ;
+; Embedded Multiplier 9-bit elements          ; 4                                                                          ;
+;                                             ;                                                                            ;
+; Maximum fan-out node                        ; butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult0|mult_dks:auto_generated|mac_out2 ;
+; Maximum fan-out                             ; 61                                                                         ;
+; Total fan-out                               ; 2859                                                                       ;
+; Average fan-out                             ; 1.90                                                                       ;
++---------------------------------------------+----------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |butterflyW2               ; 68 (68)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 132  ; 0            ; 0          ; |butterflyW2        ; butterflyW2 ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                              ;
++------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node                           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                     ; Entity Name ; Library Name ;
++------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+--------------+
+; |fft8                                                ; 732 (0)             ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 384  ; 0            ; 0          ; |fft8                                                                                                                                                   ; fft8        ; work         ;
+;    |butterflyW0:s1a|                                 ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW0:s1a                                                                                                                                   ; butterflyW0 ; work         ;
+;    |butterflyW0:s1b|                                 ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW0:s1b                                                                                                                                   ; butterflyW0 ; work         ;
+;    |butterflyW0:s1c|                                 ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW0:s1c                                                                                                                                   ; butterflyW0 ; work         ;
+;    |butterflyW0:s1d|                                 ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW0:s1d                                                                                                                                   ; butterflyW0 ; work         ;
+;    |butterflyW0:s2a|                                 ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW0:s2a                                                                                                                                   ; butterflyW0 ; work         ;
+;    |butterflyW0:s2c|                                 ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW0:s2c                                                                                                                                   ; butterflyW0 ; work         ;
+;    |butterflyW0:s3a|                                 ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW0:s3a                                                                                                                                   ; butterflyW0 ; work         ;
+;    |butterflyW1:s3b|                                 ; 230 (64)            ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |fft8|butterflyW1:s3b                                                                                                                                   ; butterflyW1 ; work         ;
+;       |cmulW1:rot|                                   ; 166 (46)            ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |fft8|butterflyW1:s3b|cmulW1:rot                                                                                                                        ; cmulW1      ; work         ;
+;          |lpm_mult:Mult0|                            ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |fft8|butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult0                                                                                                         ; lpm_mult    ; work         ;
+;             |mult_dks:auto_generated|                ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |fft8|butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult0|mult_dks:auto_generated                                                                                 ; mult_dks    ; work         ;
+;          |lpm_mult:Mult1|                            ; 120 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1                                                                                                         ; lpm_mult    ; work         ;
+;             |multcore:mult_core|                     ; 120 (63)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1|multcore:mult_core                                                                                      ; multcore    ; work         ;
+;                |mpar_add:padder|                     ; 57 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder                                                                      ; mpar_add    ; work         ;
+;                   |lpm_add_sub:adder[0]|             ; 19 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                 ; lpm_add_sub ; work         ;
+;                      |add_sub_7kg:auto_generated|    ; 19 (19)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_7kg:auto_generated                      ; add_sub_7kg ; work         ;
+;                   |lpm_add_sub:adder[1]|             ; 17 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]                                                 ; lpm_add_sub ; work         ;
+;                      |add_sub_1vg:auto_generated|    ; 17 (17)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|add_sub_1vg:auto_generated                      ; add_sub_1vg ; work         ;
+;                   |mpar_add:sub_par_add|             ; 21 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ; mpar_add    ; work         ;
+;                      |lpm_add_sub:adder[0]|          ; 21 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ; lpm_add_sub ; work         ;
+;                         |add_sub_5vg:auto_generated| ; 21 (21)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_5vg:auto_generated ; add_sub_5vg ; work         ;
+;    |butterflyW2:s2b|                                 ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW2:s2b                                                                                                                                   ; butterflyW2 ; work         ;
+;    |butterflyW2:s2d|                                 ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW2:s2d                                                                                                                                   ; butterflyW2 ; work         ;
+;    |butterflyW2:s3c|                                 ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW2:s3c                                                                                                                                   ; butterflyW2 ; work         ;
+;    |butterflyW3:s3d|                                 ; 230 (64)            ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |fft8|butterflyW3:s3d                                                                                                                                   ; butterflyW3 ; work         ;
+;       |cmulW3:rot|                                   ; 166 (46)            ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |fft8|butterflyW3:s3d|cmulW3:rot                                                                                                                        ; cmulW3      ; work         ;
+;          |lpm_mult:Mult0|                            ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |fft8|butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult0                                                                                                         ; lpm_mult    ; work         ;
+;             |mult_dks:auto_generated|                ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |fft8|butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult0|mult_dks:auto_generated                                                                                 ; mult_dks    ; work         ;
+;          |lpm_mult:Mult2|                            ; 120 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult2                                                                                                         ; lpm_mult    ; work         ;
+;             |multcore:mult_core|                     ; 120 (63)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult2|multcore:mult_core                                                                                      ; multcore    ; work         ;
+;                |mpar_add:padder|                     ; 57 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder                                                                      ; mpar_add    ; work         ;
+;                   |lpm_add_sub:adder[0]|             ; 19 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                 ; lpm_add_sub ; work         ;
+;                      |add_sub_7kg:auto_generated|    ; 19 (19)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_7kg:auto_generated                      ; add_sub_7kg ; work         ;
+;                   |lpm_add_sub:adder[1]|             ; 17 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]                                                 ; lpm_add_sub ; work         ;
+;                      |add_sub_1vg:auto_generated|    ; 17 (17)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|add_sub_1vg:auto_generated                      ; add_sub_1vg ; work         ;
+;                   |mpar_add:sub_par_add|             ; 21 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ; mpar_add    ; work         ;
+;                      |lpm_add_sub:adder[0]|          ; 21 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ; lpm_add_sub ; work         ;
+;                         |add_sub_5vg:auto_generated| ; 21 (21)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fft8|butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_5vg:auto_generated ; add_sub_5vg ; work         ;
++------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 2           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 4           ;
+; Signed Embedded Multipliers           ; 2           ;
+; Unsigned Embedded Multipliers         ; 0           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
 
 
 +------------------------------------------------------+
@@ -230,20 +335,372 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult0 ;
++------------------------------------------------+----------+--------------------------------+
+; Parameter Name                                 ; Value    ; Type                           ;
++------------------------------------------------+----------+--------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                 ;
+; LPM_WIDTHA                                     ; 17       ; Untyped                        ;
+; LPM_WIDTHB                                     ; 15       ; Untyped                        ;
+; LPM_WIDTHP                                     ; 32       ; Untyped                        ;
+; LPM_WIDTHR                                     ; 32       ; Untyped                        ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                        ;
+; LPM_REPRESENTATION                             ; SIGNED   ; Untyped                        ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                        ;
+; LATENCY                                        ; 0        ; Untyped                        ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                        ;
+; INPUT_B_IS_CONSTANT                            ; YES      ; Untyped                        ;
+; USE_EAB                                        ; OFF      ; Untyped                        ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                        ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                        ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                        ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K            ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                        ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                        ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                        ;
+; CBXI_PARAMETER                                 ; mult_dks ; Untyped                        ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                        ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                        ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                        ;
++------------------------------------------------+----------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult0 ;
++------------------------------------------------+----------+--------------------------------+
+; Parameter Name                                 ; Value    ; Type                           ;
++------------------------------------------------+----------+--------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                 ;
+; LPM_WIDTHA                                     ; 17       ; Untyped                        ;
+; LPM_WIDTHB                                     ; 15       ; Untyped                        ;
+; LPM_WIDTHP                                     ; 32       ; Untyped                        ;
+; LPM_WIDTHR                                     ; 32       ; Untyped                        ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                        ;
+; LPM_REPRESENTATION                             ; SIGNED   ; Untyped                        ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                        ;
+; LATENCY                                        ; 0        ; Untyped                        ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                        ;
+; INPUT_B_IS_CONSTANT                            ; YES      ; Untyped                        ;
+; USE_EAB                                        ; OFF      ; Untyped                        ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                        ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                        ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                        ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K            ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                        ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                        ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                        ;
+; CBXI_PARAMETER                                 ; mult_dks ; Untyped                        ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                        ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                        ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                        ;
++------------------------------------------------+----------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1 ;
++------------------------------------------------+---------+---------------------------------+
+; Parameter Name                                 ; Value   ; Type                            ;
++------------------------------------------------+---------+---------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON      ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS                           ; OFF     ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS                            ; ON      ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF     ; IGNORE_CASCADE                  ;
+; LPM_WIDTHA                                     ; 16      ; Untyped                         ;
+; LPM_WIDTHB                                     ; 16      ; Untyped                         ;
+; LPM_WIDTHP                                     ; 32      ; Untyped                         ;
+; LPM_WIDTHR                                     ; 32      ; Untyped                         ;
+; LPM_WIDTHS                                     ; 1       ; Untyped                         ;
+; LPM_REPRESENTATION                             ; SIGNED  ; Untyped                         ;
+; LPM_PIPELINE                                   ; 0       ; Untyped                         ;
+; LATENCY                                        ; 0       ; Untyped                         ;
+; INPUT_A_IS_CONSTANT                            ; NO      ; Untyped                         ;
+; INPUT_B_IS_CONSTANT                            ; YES     ; Untyped                         ;
+; USE_EAB                                        ; OFF     ; Untyped                         ;
+; MAXIMIZE_SPEED                                 ; 5       ; Untyped                         ;
+; DEVICE_FAMILY                                  ; MAX 10  ; Untyped                         ;
+; CARRY_CHAIN                                    ; MANUAL  ; Untyped                         ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT     ; TECH_MAPPER_APEX20K             ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO    ; Untyped                         ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0       ; Untyped                         ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0       ; Untyped                         ;
+; CBXI_PARAMETER                                 ; NOTHING ; Untyped                         ;
+; INPUT_A_FIXED_VALUE                            ; Bx      ; Untyped                         ;
+; INPUT_B_FIXED_VALUE                            ; Bx      ; Untyped                         ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF     ; Untyped                         ;
++------------------------------------------------+---------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult2 ;
++------------------------------------------------+---------+---------------------------------+
+; Parameter Name                                 ; Value   ; Type                            ;
++------------------------------------------------+---------+---------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON      ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS                           ; OFF     ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS                            ; ON      ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF     ; IGNORE_CASCADE                  ;
+; LPM_WIDTHA                                     ; 16      ; Untyped                         ;
+; LPM_WIDTHB                                     ; 16      ; Untyped                         ;
+; LPM_WIDTHP                                     ; 32      ; Untyped                         ;
+; LPM_WIDTHR                                     ; 32      ; Untyped                         ;
+; LPM_WIDTHS                                     ; 1       ; Untyped                         ;
+; LPM_REPRESENTATION                             ; SIGNED  ; Untyped                         ;
+; LPM_PIPELINE                                   ; 0       ; Untyped                         ;
+; LATENCY                                        ; 0       ; Untyped                         ;
+; INPUT_A_IS_CONSTANT                            ; NO      ; Untyped                         ;
+; INPUT_B_IS_CONSTANT                            ; YES     ; Untyped                         ;
+; USE_EAB                                        ; OFF     ; Untyped                         ;
+; MAXIMIZE_SPEED                                 ; 5       ; Untyped                         ;
+; DEVICE_FAMILY                                  ; MAX 10  ; Untyped                         ;
+; CARRY_CHAIN                                    ; MANUAL  ; Untyped                         ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT     ; TECH_MAPPER_APEX20K             ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO    ; Untyped                         ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0       ; Untyped                         ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0       ; Untyped                         ;
+; CBXI_PARAMETER                                 ; NOTHING ; Untyped                         ;
+; INPUT_A_FIXED_VALUE                            ; Bx      ; Untyped                         ;
+; INPUT_B_FIXED_VALUE                            ; Bx      ; Untyped                         ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF     ; Untyped                         ;
++------------------------------------------------+---------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                    ;
++---------------------------------------+-------------------------------------------+
+; Name                                  ; Value                                     ;
++---------------------------------------+-------------------------------------------+
+; Number of entity instances            ; 4                                         ;
+; Entity Instance                       ; butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 17                                        ;
+;     -- LPM_WIDTHB                     ; 15                                        ;
+;     -- LPM_WIDTHP                     ; 32                                        ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                    ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                        ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                       ;
+;     -- USE_EAB                        ; OFF                                       ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                      ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                        ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                        ;
+; Entity Instance                       ; butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 17                                        ;
+;     -- LPM_WIDTHB                     ; 15                                        ;
+;     -- LPM_WIDTHP                     ; 32                                        ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                    ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                        ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                       ;
+;     -- USE_EAB                        ; OFF                                       ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                      ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                        ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                        ;
+; Entity Instance                       ; butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 16                                        ;
+;     -- LPM_WIDTHB                     ; 16                                        ;
+;     -- LPM_WIDTHP                     ; 32                                        ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                    ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                        ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                       ;
+;     -- USE_EAB                        ; OFF                                       ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                      ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                        ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                        ;
+; Entity Instance                       ; butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult2 ;
+;     -- LPM_WIDTHA                     ; 16                                        ;
+;     -- LPM_WIDTHB                     ; 16                                        ;
+;     -- LPM_WIDTHP                     ; 32                                        ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                    ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                        ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                       ;
+;     -- USE_EAB                        ; OFF                                       ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                      ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                        ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                        ;
++---------------------------------------+-------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "butterflyW3:s3d"                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; xr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; xi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "butterflyW2:s3c"                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; xr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; xi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "butterflyW1:s3b"                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; xr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; xi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "butterflyW0:s3a"                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; xr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; xi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "butterflyW2:s2d"                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; xr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; xi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "butterflyW0:s2c"                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; xr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; xi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "butterflyW2:s2b"                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; xr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; xi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "butterflyW0:s2a"                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; xr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; xi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "butterflyW0:s1d"                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; ai     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; bi     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; xr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; xi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "butterflyW0:s1c"                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; ai     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; bi     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; xr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; xi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "butterflyW0:s1b"                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; ai     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; bi     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; xr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; xi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "butterflyW0:s1a"                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; ai     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; bi     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; xr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; xi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yr[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; yi[16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 132                         ;
-; cycloneiii_lcell_comb ; 68                          ;
-;     arith             ; 64                          ;
-;         3 data inputs ; 64                          ;
-;     normal            ; 4                           ;
-;         2 data inputs ; 4                           ;
+; boundary_port         ; 384                         ;
+; cycloneiii_lcell_comb ; 733                         ;
+;     arith             ; 571                         ;
+;         2 data inputs ; 45                          ;
+;         3 data inputs ; 526                         ;
+;     normal            ; 162                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 40                          ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 110                         ;
+; cycloneiii_mac_mult   ; 2                           ;
+; cycloneiii_mac_out    ; 2                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.60                        ;
-; Average LUT depth     ; 2.08                        ;
+; Max LUT depth         ; 8.80                        ;
+; Average LUT depth     ; 5.80                        ;
 +-----------------------+-----------------------------+
 
 
@@ -252,7 +709,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -262,7 +719,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Mon Nov 23 18:28:24 2026
+    Info: Processing started: Tue Nov 24 14:09:47 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DFT_IDFT -c DFT_IDFT
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -282,17 +739,134 @@ Info (12021): Found 1 design units, including 1 entities, in source file butterf
     Info (12023): Found entity 1: butterflyW2 File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW2.v Line: 18
 Info (12021): Found 1 design units, including 1 entities, in source file tb_butterflyw2.v
     Info (12023): Found entity 1: tb_butterflyW2 File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW2.v Line: 6
-Info (12127): Elaborating entity "butterflyW2" for the top level hierarchy
+Info (12021): Found 1 design units, including 1 entities, in source file butterflyw0.v
+    Info (12023): Found entity 1: butterflyW0 File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW0.v Line: 22
+Warning (10259): Verilog HDL error at tb_butterflyW0.v(74): constant value overflow File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW0.v Line: 74
+Warning (10259): Verilog HDL error at tb_butterflyW0.v(75): constant value overflow File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW0.v Line: 75
+Warning (10259): Verilog HDL error at tb_butterflyW0.v(76): constant value overflow File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW0.v Line: 76
+Info (12021): Found 1 design units, including 1 entities, in source file tb_butterflyw0.v
+    Info (12023): Found entity 1: tb_butterflyW0 File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW0.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file butterflyw3.v
+    Info (12023): Found entity 1: butterflyW3 File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW3.v Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file tb_butterflyw3.v
+    Info (12023): Found entity 1: tb_butterflyW3 File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW3.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file butterflyw1.v
+    Info (12023): Found entity 1: butterflyW1 File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW1.v Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file tb_butterflyw1.v
+    Info (12023): Found entity 1: tb_butterflyW1 File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_butterflyW1.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file fft8.v
+    Info (12023): Found entity 1: fft8 File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file tb_fft8.v
+    Info (12023): Found entity 1: tb_fft8 File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/tb_fft8.v Line: 3
+Info (12127): Elaborating entity "fft8" for the top level hierarchy
+Info (12128): Elaborating entity "butterflyW0" for hierarchy "butterflyW0:s1a" File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 41
+Info (12128): Elaborating entity "butterflyW2" for hierarchy "butterflyW2:s2b" File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 62
+Info (12128): Elaborating entity "butterflyW1" for hierarchy "butterflyW1:s3b" File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 81
+Info (12128): Elaborating entity "cmulW1" for hierarchy "butterflyW1:s3b|cmulW1:rot" File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW1.v Line: 35
+Warning (10230): Verilog HDL assignment warning at cmulW1.v(58): truncated value with size 34 to match size of target (17) File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW1.v Line: 58
+Warning (10230): Verilog HDL assignment warning at cmulW1.v(59): truncated value with size 34 to match size of target (17) File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW1.v Line: 59
+Info (12128): Elaborating entity "butterflyW3" for hierarchy "butterflyW3:s3d" File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 85
+Info (12128): Elaborating entity "cmulW3" for hierarchy "butterflyW3:s3d|cmulW3:rot" File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/butterflyW3.v Line: 35
+Warning (10230): Verilog HDL assignment warning at cmulW3.v(57): truncated value with size 34 to match size of target (17) File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW3.v Line: 57
+Warning (10230): Verilog HDL assignment warning at cmulW3.v(58): truncated value with size 34 to match size of target (17) File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW3.v Line: 58
+Info (278001): Inferred 4 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "butterflyW1:s3b|cmulW1:rot|Mult0" File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW1.v Line: 50
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "butterflyW3:s3d|cmulW3:rot|Mult0" File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW3.v Line: 49
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "butterflyW1:s3b|cmulW1:rot|Mult1" File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW1.v Line: 51
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "butterflyW3:s3d|cmulW3:rot|Mult2" File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW3.v Line: 51
+Info (12130): Elaborated megafunction instantiation "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult0" File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW1.v Line: 50
+Info (12133): Instantiated megafunction "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult0" with the following parameter: File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW1.v Line: 50
+    Info (12134): Parameter "LPM_WIDTHA" = "17"
+    Info (12134): Parameter "LPM_WIDTHB" = "15"
+    Info (12134): Parameter "LPM_WIDTHP" = "32"
+    Info (12134): Parameter "LPM_WIDTHR" = "32"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_dks.tdf
+    Info (12023): Found entity 1: mult_dks File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/db/mult_dks.tdf Line: 29
+Info (12130): Elaborated megafunction instantiation "butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult0" File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW3.v Line: 49
+Info (12133): Instantiated megafunction "butterflyW3:s3d|cmulW3:rot|lpm_mult:Mult0" with the following parameter: File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW3.v Line: 49
+    Info (12134): Parameter "LPM_WIDTHA" = "17"
+    Info (12134): Parameter "LPM_WIDTHB" = "15"
+    Info (12134): Parameter "LPM_WIDTHP" = "32"
+    Info (12134): Parameter "LPM_WIDTHR" = "32"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12130): Elaborated megafunction instantiation "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1" File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW1.v Line: 51
+Info (12133): Instantiated megafunction "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1" with the following parameter: File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/cmulW1.v Line: 51
+    Info (12134): Parameter "LPM_WIDTHA" = "16"
+    Info (12134): Parameter "LPM_WIDTHB" = "16"
+    Info (12134): Parameter "LPM_WIDTHP" = "32"
+    Info (12134): Parameter "LPM_WIDTHR" = "32"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1|multcore:mult_core", which is child of megafunction instantiation "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1" File: c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
+Info (12131): Elaborated megafunction instantiation "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1" File: c:/altera_lite/25.1std/quartus/libraries/megafunctions/multcore.tdf Line: 229
+Info (12131): Elaborated megafunction instantiation "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]", which is child of megafunction instantiation "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1" File: c:/altera_lite/25.1std/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_1vg.tdf
+    Info (12023): Found entity 1: add_sub_1vg File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/db/add_sub_1vg.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1" File: c:/altera_lite/25.1std/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7kg.tdf
+    Info (12023): Found entity 1: add_sub_7kg File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/db/add_sub_7kg.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1" File: c:/altera_lite/25.1std/quartus/libraries/megafunctions/mpar_add.tdf Line: 138
+Info (12131): Elaborated megafunction instantiation "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1" File: c:/altera_lite/25.1std/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_5vg.tdf
+    Info (12023): Found entity 1: add_sub_5vg File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/db/add_sub_5vg.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "butterflyW1:s3b|cmulW1:rot|lpm_mult:Mult1" File: c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "X0i[0]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 22
+    Warning (13410): Pin "X0i[1]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 22
+    Warning (13410): Pin "X0i[2]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 22
+    Warning (13410): Pin "X0i[3]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 22
+    Warning (13410): Pin "X0i[4]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 22
+    Warning (13410): Pin "X0i[5]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 22
+    Warning (13410): Pin "X0i[6]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 22
+    Warning (13410): Pin "X0i[7]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 22
+    Warning (13410): Pin "X0i[8]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 22
+    Warning (13410): Pin "X0i[9]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 22
+    Warning (13410): Pin "X0i[10]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 22
+    Warning (13410): Pin "X0i[11]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 22
+    Warning (13410): Pin "X0i[12]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 22
+    Warning (13410): Pin "X0i[13]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 22
+    Warning (13410): Pin "X0i[14]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 22
+    Warning (13410): Pin "X0i[15]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 22
+    Warning (13410): Pin "X4i[0]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 23
+    Warning (13410): Pin "X4i[1]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 23
+    Warning (13410): Pin "X4i[2]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 23
+    Warning (13410): Pin "X4i[3]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 23
+    Warning (13410): Pin "X4i[4]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 23
+    Warning (13410): Pin "X4i[5]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 23
+    Warning (13410): Pin "X4i[6]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 23
+    Warning (13410): Pin "X4i[7]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 23
+    Warning (13410): Pin "X4i[8]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 23
+    Warning (13410): Pin "X4i[9]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 23
+    Warning (13410): Pin "X4i[10]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 23
+    Warning (13410): Pin "X4i[11]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 23
+    Warning (13410): Pin "X4i[12]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 23
+    Warning (13410): Pin "X4i[13]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 23
+    Warning (13410): Pin "X4i[14]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 23
+    Warning (13410): Pin "X4i[15]" is stuck at GND File: C:/camis/DFT_IDFT_Convolucao_FPGA/DFT_IDFT/fft8.v Line: 23
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 200 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 64 input pins
-    Info (21059): Implemented 68 output pins
-    Info (21061): Implemented 68 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4745 megabytes
-    Info: Processing ended: Mon Nov 23 18:28:36 2026
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:21
+Info (21057): Implemented 1120 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 128 input pins
+    Info (21059): Implemented 256 output pins
+    Info (21061): Implemented 732 logic cells
+    Info (21062): Implemented 4 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 41 warnings
+    Info: Peak virtual memory: 4783 megabytes
+    Info: Processing ended: Tue Nov 24 14:10:00 2026
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:22
 
 
