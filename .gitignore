@@ -1,0 +1,38 @@
+
+# Quartus - Arquivos temporários de compilação
+
+# Bancos de dados gerados pelo Quartus
+db/
+incremental_db/
+
+# Arquivos gerados durante a compilação
+output_files/
+
+# Arquivos temporários
+*.bak
+*.tmp
+*.rpt
+*.summary
+*.jdi
+*.qws
+*.qdf
+
+# Simulação
+# Arquivos temporários de simulação
+simulation/modelsim/
+simulation/questa/
+simulation/*.wlf
+simulation/*.vcd
+
+# Sistema operacional
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Editores
+.vscode/
+.idea/
